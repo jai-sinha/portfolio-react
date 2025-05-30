@@ -5,17 +5,24 @@ export default function About() {
 	return (
 		<div>
 
-			<Image style={{height:"50%", width:"50%"}} src="/highRes/me-headshot.jpeg" alt="hey now"/>
+			<Image className="headshot" style={{height:"100vh", width:"auto"}} src="/highRes/headshot-better.JPG" alt="hey now"/>
 
 			<div className="wordsBackground">
-			<div className="words">
-				<h2>
-					<b>Jai Sinha</b>
-				</h2>
-				<p>
-					Based in the Bay Area, and currently attending the University of Wisconsin in Madison where I will be graduating in Spring 2025 with a BS in Computer Science. I started photography as a hobby in high school, and like to keep up with it alongside my passions for cars and motorsport in general. In 2022, I decided this would be a fun side project to build some new skills and create a virtual gallery!
-				</p>
-			</div>
+				<div className="words">
+					<h2>
+						<strong>Jai Sinha</strong>
+					</h2>
+					<p>
+						Hi! I'm a UW–Madison graduate with a B.S. in Computer Sciences and two summers of software engineering experience at Tesla, where I honed both my technical expertise and collaborative skills. I'm a driven problem-solver and team player, fluent in Go, Python, C/C++, and Java, and I'm excited to apply my skills to meaningful, impactful work! In my free time, I love football, cars, photography, video games, and cooking :)
+					</p>
+					<div style={{fontSize:'1.25rem'}}>
+						<a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/jai-sinha">LinkedIn</a>
+						{' | '}
+						<a target="_blank" rel="noopener noreferrer" href="https://github.com/jai-sinha">GitHub</a>
+						{' | '}
+						<a href="/resume.pdf" download="Jai Sinha Resume">Resume (I pinky promise this downloadable pdf is trustworthy!)</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

@@ -17,10 +17,15 @@
   text-decoration:underline;
 }
 
+.headshot {
+  position: absolute;
+  left: 10%;
+}
+
 .wordsBackground {
   background-color: blanchedalmond;
   position: absolute;
-  top: 60%;
+  top: 50%;
   left: 60%;
   transform: translate(-50%, -50%);
 }
