@@ -36,3 +36,16 @@
   margin-left: 80px;
   margin-bottom: 40px;
 }
+
+.gallery-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: -30px;
+  width: auto;
+}
+
+.gallery-grid_column > image { 
+  background: grey;
+  margin-bottom: 30px;
+}
