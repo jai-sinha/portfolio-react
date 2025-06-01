@@ -13,7 +13,7 @@ export default function PortfolioRouter() {
 				<Route index element={<Landing />} />
 				<Route path="gallery" element={<Gallery />} />
 				<Route path="about" element={<About />} />
-				<Route path="*" element={<NoMatch />} />
+				{/* <Route path="*" element={<NoMatch />} /> */}
 			</Route>
 		</Routes>
 	</BrowserRouter>

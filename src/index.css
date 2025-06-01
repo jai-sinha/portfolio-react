@@ -41,11 +41,13 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-left: -30px;
   width: auto;
 }
 
-.gallery-grid_column > image { 
-  background: grey;
-  margin-bottom: 30px;
+.gallery-grid_column {
+  padding: 1rem;
+}
+
+.gallery-image { 
+  padding-bottom: 1rem;
 }

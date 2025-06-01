@@ -1,11 +1,14 @@
-import { Image } from 'react-bootstrap';
+import { Image, Modal } from 'react-bootstrap';
+import { useState } from 'react';
 
 export default function About() {
+
+	const [show, setShow] = useState(false);
 	
 	return (
 		<div>
 
-			<Image className="headshot" style={{height:"100vh", width:"auto"}} src="/highRes/headshot-better.JPG" alt="hey now"/>
+			<Image className="headshot" style={{height:"100vh", width:"auto"}} src="/highRes/headshot-better.jpeg" alt="hey now"/>
 
 			<div className="wordsBackground">
 				<div className="words">
@@ -20,10 +23,18 @@ export default function About() {
 						{' | '}
 						<a target="_blank" rel="noopener noreferrer" href="https://github.com/jai-sinha">GitHub</a>
 						{' | '}
-						<a href="/resume.pdf" download="Jai Sinha Resume">Resume (I pinky promise this downloadable pdf is trustworthy!)</a>
+						<a onClick={() => setShow(true)}>Resume</a>
 					</div>
 				</div>
 			</div>
+
+			<Modal show={show} fullscreen onHide={() => setShow(false)}>
+				<Modal.Header closeButton></Modal.Header>
+				<Modal.Body style={{ display:'flex', justifyContent:'center', alignItems:'center'}}>
+					<Image style={{ height:"100vh", width:"auto" }} src="resume.pdf"/>
+				</Modal.Body>
+			</Modal>
+
 		</div>
 	);
 }

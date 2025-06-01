@@ -1,12 +1,13 @@
 import { default as Masonry } from 'react-masonry-css';
-import { Image } from 'react-bootstrap';
+import { Image, Modal } from 'react-bootstrap';
+import { useState } from 'react'
 
 export default function Gallery() {
 
 	const pics = [
 		{ src: "z-drifting.jpeg", alt: "350 and 370zs drifting" },
-		{ src: "s13-drift.jpeg", alt: "s13 drifting" },
 		{ src: "e36-woods-vert.jpeg", alt: "e36 in woods vertical, really wanted this to make the @bmwclassic instagram but they were hating"},
+		{ src: "s13-drift.jpeg", alt: "s13 drifting" },
 		{ src: "hanna-doubleexposed.jpeg", alt: "double-exposed, an accident actually"},
 		{ src: "nsx-interior.jpeg", alt: "interior of nsx... need"},
 		{ src: "e36-e9-rearquarter.jpeg", alt: "e36 ltw and e9 batmobile" },
@@ -24,23 +25,48 @@ export default function Gallery() {
 		{ src: "991-wingstack-closeup.jpeg", alt: "991 turbo closeup" },
 		{ src: "rsspyder-jetwing.jpeg", alt: "wings on wings" },
 		{ src: "cayman-interior.jpeg", alt: "interior of cayman s... peep the carpet" },
-		{ src: "e9-frontquarter-vert.jpeg", alt: "e9 'batmobile' front quarter" },
 		{ src: "e36-rearquarter-legion.jpeg", alt: "e36 rear quarter view" },
+		{ src: "e9-frontquarter-vert.jpeg", alt: "e9 'batmobile' front quarter" },
 		{ src: "amg-shiny.jpeg", alt: "super shiny amg gt logo" },
 		{ src: "ltw-rearquarter.jpeg", alt: "e36 ltw rear quarter view" }
 	];
 
+  	const [show, setShow] = useState(false);
+	const [selectedImage, setSelectedImage] = useState(pics[1]);
+
+	function handleShow(image) {
+		setSelectedImage(image);
+		setShow(true);
+
+	}
+
 	return (
-		<Masonry
-			breakpointCols={4}
-			className="gallery-grid"
-			columnClassName="gallery-grid_column"
-		>
-			{
-				pics.map((item, index) => (
-					<Image fluid src={"/lowRes/" + item.src} alt={item.alt}/>
-				))
-			}
-		</Masonry>
+		<div>
+			<Masonry
+				breakpointCols={3}
+				className="gallery-grid"
+				columnClassName="gallery-grid_column"
+			>
+				{
+					pics.map((img) => (
+						<Image 
+							className="gallery-image"
+							key={img.src} 
+							onClick={() => handleShow(img)} 
+							fluid 
+							src={"/thumbnails/" + img.src} 
+							alt={img.alt}
+						/>
+					))
+				}
+			</Masonry>
+			
+			<Modal show={show} fullscreen onHide={() => setShow(false)}>
+				<Modal.Header closeButton></Modal.Header>
+				<Modal.Body style={{ display:'flex', justifyContent:'center', alignItems:'center'}}>
+					<Image style={{ height:"100vh", width:"auto" }} src={"/highRes/" + selectedImage.src} alt={selectedImage.alt}/>
+				</Modal.Body>
+			</Modal>
+		</div>
   );
 }
