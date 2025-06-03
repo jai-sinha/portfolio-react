@@ -26,7 +26,7 @@ export default function Landing() {
 	return (
 		<>
 			<Link className="centered" to="/gallery">Cars. Portraits. Motorsport.</Link>
-			<Image style={{marginTop:"-10rem"}} fluid src={mainImages[imageIndex].src} alt={mainImages[imageIndex].alt} />
+			<Image style={{marginTop:"-10rem"}} fluid src={`${import.meta.env.BASE_URL}${mainImages[imageIndex].src}`} alt={mainImages[imageIndex].alt} />
 		</>
 	);
 }

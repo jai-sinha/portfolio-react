@@ -57,7 +57,7 @@ export default function Gallery() {
 							key={img.src} 
 							onClick={() => handleShow(img)} 
 							fluid 
-							src={"/thumbnails/" + img.src} 
+							src={`${import.meta.env.BASE_URL}thumbnails/${img.src}`}
 							alt={img.alt}
 						/>
 					))
@@ -67,7 +67,7 @@ export default function Gallery() {
 			<Modal show={show} fullscreen onHide={() => setShow(false)}>
 				<Modal.Header closeButton></Modal.Header>
 				<Modal.Body style={{ display:'flex', justifyContent:'center', alignItems:'center'}}>
-					<Image style={{ height:"100vh", width:"auto" }} src={"/highRes/" + selectedImage.src} alt={selectedImage.alt}/>
+					<Image style={{ height:"100vh", width:"auto" }} src={`${import.meta.env.BASE_URL}highRes/${selectedImage.src}`} alt={selectedImage.alt}/>
 				</Modal.Body>
 			</Modal>
 		</div>
