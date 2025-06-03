@@ -16,18 +16,18 @@ export default function Gallery() {
 		{ src: "dominique-shinyrings-vert.jpeg", alt: "dom with shiny rings vertical" },
 		{ src: "e90-legion-edited.jpeg", alt: "edited out half the background, e90 m3"},
 		{ src: "e36-e9-mercedes.jpeg", alt: "old german sports cars, monterey" },
-		{ src: "rsspyder-frontquarter.jpeg", alt: "favorite race car ever, porsche rs spyder" },
 		{ src: "singer-vert.jpeg", alt: "singer 911 rear end" },
+		{ src: "rsspyder-frontquarter.jpeg", alt: "favorite race car ever, porsche rs spyder" },
 		{ src: "yosemite-gray.jpeg", alt: "yosemite on film, looks b/w but not!" },
 		{ src: "hanna-greenhouse-vert.jpeg", alt: "hanna in a greenhouse" },
 		{ src: "991-wingstack-closeup.jpeg", alt: "991 turbo closeup" },
+		{ src: "f1-car.jpeg", alt: "lewis hamilton's ferrari in monaco" },
 		{ src: "rsspyder-jetwing.jpeg", alt: "wings on wings" },
+		{ src: "ltw-rearquarter.jpeg", alt: "e36 ltw rear quarter view" },
+		{ src: "e9-frontquarter-vert.jpeg", alt: "e9 'batmobile' front quarter" },
 		{ src: "cayman-interior.jpeg", alt: "interior of cayman s... peep the carpet" },
 		{ src: "e36-rearquarter-legion.jpeg", alt: "e36 rear quarter view" },
-		{ src: "e9-frontquarter-vert.jpeg", alt: "e9 'batmobile' front quarter" },
 		{ src: "amg-shiny.jpeg", alt: "super shiny amg gt logo" },
-		{ src: "ltw-rearquarter.jpeg", alt: "e36 ltw rear quarter view" },
-		{ src: "f1-car.jpeg", alt: "lewis hamilton's ferrari in monaco" }
 	];
 
   	const [show, setShow] = useState(false);
@@ -42,7 +42,11 @@ export default function Gallery() {
 	return (
 		<div>
 			<Masonry
-				breakpointCols={3}
+				breakpointCols={{
+					default: 4,
+					2560: 3, 
+					576: 2
+				}}
 				className="gallery-grid"
 				columnClassName="gallery-grid_column"
 			>
@@ -53,7 +57,7 @@ export default function Gallery() {
 							key={img.src} 
 							onClick={() => handleShow(img)} 
 							fluid 
-							src={"/thumbnails/" + img.src} 
+							src={`${import.meta.env.BASE_URL}thumbnails/${img.src}`}
 							alt={img.alt}
 						/>
 					))
@@ -63,7 +67,7 @@ export default function Gallery() {
 			<Modal show={show} fullscreen onHide={() => setShow(false)}>
 				<Modal.Header closeButton></Modal.Header>
 				<Modal.Body style={{ display:'flex', justifyContent:'center', alignItems:'center'}}>
-					<Image style={{ height:"100vh", width:"auto" }} src={"/highRes/" + selectedImage.src} alt={selectedImage.alt}/>
+					<Image style={{ height:"100vh", width:"auto" }} src={`${import.meta.env.BASE_URL}highRes/${selectedImage.src}`} alt={selectedImage.alt}/>
 				</Modal.Body>
 			</Modal>
 		</div>
