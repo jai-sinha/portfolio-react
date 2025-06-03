@@ -22,21 +22,6 @@
   left: 10%;
 }
 
-.wordsBackground {
-  background-color: blanchedalmond;
-  position: absolute;
-  top: 50%;
-  left: 60%;
-  transform: translate(-50%, -50%);
-}
-
-.words { 
-  margin-top: 40px;
-  margin-right: 80px;
-  margin-left: 80px;
-  margin-bottom: 40px;
-}
-
 .gallery-grid {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -50,4 +35,112 @@
 
 .gallery-image { 
   padding-bottom: 1rem;
+}
+
+/* Base styles for larger screens */
+.about-container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.headshot {
+  position: absolute;
+  left: 10%;
+  height: 100vh;
+  width: auto;
+  object-fit: cover;
+  max-width: 45%;
+}
+
+.wordsBackground {
+  background-color: blanchedalmond !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 60% !important;
+  transform: translate(-50%, -50%) !important;
+  max-width: 40% !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.words {
+  margin: 40px 80px !important;
+}
+
+.links {
+  font-size: 1.25rem !important;
+}
+
+.links a {
+  cursor: pointer !important;
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .headshot {
+    left: 5% !important;
+    max-width: 50% !important;
+  }
+  
+  .wordsBackground {
+    left: 65% !important;
+    max-width: 45% !important;
+  }
+  
+  .words {
+    margin: 30px 40px !important;
+  }
+  
+  .links {
+    font-size: .9rem !important;
+  }
+
+  .words h2 {
+    font-size: 1.25rem;
+  }
+
+  .words p {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile landscape */
+@media (max-width: 768px) {
+  .words h2 {
+    font-size: .75rem;
+  }
+
+  .words p {
+    font-size: .5rem;
+  }
+}
+/* Mobile portrait */
+@media (max-width: 480px) {
+  .headshot {
+    height: 40vh !important;
+  }
+  
+  .wordsBackground {
+    max-width: 95% !important;
+    margin: 15px auto !important;
+  }
+  
+  .words {
+    margin: 15px 20px !important;
+  }
+  
+  .words h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  .words p {
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
+  }
+  
+  .links {
+    font-size: 0.9rem !important;
+  }
 }
