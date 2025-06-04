@@ -40,7 +40,7 @@ export default function About() {
 		<Modal show={show} fullscreen onHide={() => setShow(false)}>
 		  <Modal.Header closeButton></Modal.Header>
 		  <Modal.Body style={{ display:'flex', justifyContent:'center', alignItems:'center'}}>
-			 <Image style={{ height:"100vh", width:"auto" }} src="resume.pdf"/>
+			 <Image style={{ height:"100vh", width:"auto" }} src={`${import.meta.env.BASE_URL}Jai Sinha Resume.pdf`}/>
 		  </Modal.Body>
 		</Modal>
 	 </div>
