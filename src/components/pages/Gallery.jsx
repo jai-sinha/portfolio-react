@@ -1,6 +1,7 @@
 import { default as Masonry } from 'react-masonry-css';
-import { Image, Modal } from 'react-bootstrap';
-import { useState } from 'react'
+import { Modal } from 'react-bootstrap';
+import { useState } from 'react';
+import OptimizedImage from '../OptimizedImage';
 
 export default function Gallery() {
 
@@ -36,7 +37,6 @@ export default function Gallery() {
 	function handleShow(image) {
 		setSelectedImage(image);
 		setShow(true);
-
 	}
 
 	return (
@@ -44,30 +44,36 @@ export default function Gallery() {
 			<Masonry
 				breakpointCols={{
 					default: 4,
-					2560: 3, 
+					2560: 3,
 					576: 2
 				}}
 				className="gallery-grid"
 				columnClassName="gallery-grid_column"
 			>
 				{
-					pics.map((img) => (
-						<Image 
+					pics.map((img, index) => (
+						<OptimizedImage
+							key={img.src}
 							className="gallery-image"
-							key={img.src} 
-							onClick={() => handleShow(img)} 
-							fluid 
 							src={`${import.meta.env.BASE_URL}thumbnails/${img.src}`}
 							alt={img.alt}
+							fluid
+							onClick={() => handleShow(img)}
+							priority={index < 4} // Prioritize first 4 images
 						/>
 					))
 				}
 			</Masonry>
-			
+
 			<Modal show={show} fullscreen onHide={() => setShow(false)}>
 				<Modal.Header closeButton></Modal.Header>
 				<Modal.Body style={{ display:'flex', justifyContent:'center', alignItems:'center'}}>
-					<Image style={{ height:"100vh", width:"auto" }} src={`${import.meta.env.BASE_URL}highRes/${selectedImage.src}`} alt={selectedImage.alt}/>
+					<OptimizedImage
+						src={`${import.meta.env.BASE_URL}highRes/${selectedImage.src}`}
+						alt={selectedImage.alt}
+						style={{ height:"100vh", width:"auto" }}
+						priority={true}
+					/>
 				</Modal.Body>
 			</Modal>
 		</div>

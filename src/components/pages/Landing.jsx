@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { Image } from "react-bootstrap";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import OptimizedImage from "../OptimizedImage";
 
 export default function Landing() {
 	const [imageIndex, setImageIndex] = useState(0);
@@ -15,18 +15,24 @@ export default function Landing() {
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			setImageIndex(prevIndex => 
-				prevIndex >= 3 ? 0 : prevIndex + 1
+			setImageIndex(prevIndex =>
+				prevIndex >= mainImages.length - 1 ? 0 : prevIndex + 1
 			);
 		}, 2500);
 
 		return () => clearInterval(interval);
-	}, []);
+	}, [mainImages.length]);
 
 	return (
 		<>
 			<Link className="centered" to="/gallery">Cars. Portraits. Motorsport.</Link>
-			<Image style={{marginTop:"-10rem"}} fluid src={`${import.meta.env.BASE_URL}${mainImages[imageIndex].src}`} alt={mainImages[imageIndex].alt} />
+			<OptimizedImage
+				style={{marginTop:"-10rem"}}
+				fluid
+				src={`${import.meta.env.BASE_URL}${mainImages[imageIndex].src}`}
+				alt={mainImages[imageIndex].alt}
+				priority={true}
+			/>
 		</>
 	);
 }

@@ -1,7 +1,7 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 
-export default function PortfolioNav(props) {
+export default function PortfolioNav() {
   const location = useLocation();
   
   return <Navbar bg="light" variant="light" fixed="top" expand="sm" collapseOnSelect>
