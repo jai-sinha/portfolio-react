@@ -34,13 +34,16 @@ export default function Gallery() {
 
 			<Modal show={show} fullscreen onHide={() => setShow(false)}>
 				<Modal.Header closeButton></Modal.Header>
-				<Modal.Body style={{ display:'flex', justifyContent:'center', alignItems:'center'}}>
-					<OptimizedImage
-						src={`${import.meta.env.BASE_URL}highRes/${selectedImage.src}`}
-						alt={selectedImage.alt}
-						style={{ height:"100vh", width:"auto" }}
-						priority={true}
-					/>
+				<Modal.Body onClick={() => setShow(false)} style={{ display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
+					<div onClick={(e) => e.stopPropagation()}>
+						<OptimizedImage
+							src={`${import.meta.env.BASE_URL}highRes/${selectedImage.src}`}
+							alt={selectedImage.alt}
+							style={{ maxHeight:"90vh", maxWidth:"90vw", width:"auto", height:"auto", objectFit:"contain" }}
+							priority={true}
+						/>
+						<p style={{ marginTop: '10px', textAlign: 'center', color: '#000000ff', fontSize: '18px' }}>{selectedImage.alt}</p>
+					</div>
 				</Modal.Body>
 			</Modal>
 		</div>

@@ -73,7 +73,7 @@ const OptimizedImage = ({
   }
 
   return (
-	<div ref={imgRef} className={`image-container ${className}`} style={{ ...style }}>
+	<div ref={imgRef} className={`image-container ${className}`} style={{ position: 'relative' }}>
 	  {isLoading && (
 		<div
 		  style={{
@@ -102,6 +102,7 @@ const OptimizedImage = ({
 		  onError={handleError}
 		  onClick={onClick}
 		  style={{
+			...style,
 			opacity: isLoading ? 0 : 1,
 			transition: 'opacity 0.3s ease-in-out'
 		  }}

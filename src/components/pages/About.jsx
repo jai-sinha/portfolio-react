@@ -44,7 +44,7 @@ export default function About() {
 			<Modal.Header closeButton></Modal.Header>
 			<Modal.Body style={{ display:'flex', justifyContent:'center', alignItems:'center'}}>
 				<OptimizedImage
-					src={`${import.meta.env.BASE_URL}Jai Sinha Resume.pdf`}
+					src={`${import.meta.env.BASE_URL}Jai_Sinha_Resume.pdf`}
 					alt="Jai Sinha's resume document"
 					style={{ height:"100vh", width:"auto" }}
 					priority={true}

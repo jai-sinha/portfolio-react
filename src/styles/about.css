@@ -9,7 +9,8 @@
 .headshot {
   position: absolute;
   left: 10%;
-  height: 100vh;
+  top: 0%;
+  height: 95vh;
   width: auto;
   object-fit: cover;
   max-width: 45%;
