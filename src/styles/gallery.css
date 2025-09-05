@@ -5,6 +5,10 @@
 }
 
 /* Default: 3 columns for medium screens */
+/* 
+    Creates a masonry-style grid without external packages, which is
+    okay because photo order doesn't matter 
+*/
 .gallery-container {
     column-count: 3;
 }

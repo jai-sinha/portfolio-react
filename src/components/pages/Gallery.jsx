@@ -26,7 +26,7 @@ export default function Gallery() {
 							alt={img.alt}
 							fluid
 							onClick={() => handleShow(img)}
-							priority={index < 4}
+							priority={index < 6}
 						/>
 					))
 				}
