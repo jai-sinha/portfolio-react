@@ -14,7 +14,7 @@ export default defineConfig({
         manualChunks: {
           vendor: ['react', 'react-dom'],
           router: ['react-router-dom'],
-          ui: ['bootstrap', 'react-bootstrap', 'react-masonry-css']
+          ui: ['bootstrap', 'react-bootstrap']
         }
       }
     },
