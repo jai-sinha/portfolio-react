@@ -2,6 +2,7 @@ import { Modal } from 'react-bootstrap';
 import { useState } from 'react';
 import OptimizedImage from '../OptimizedImage';
 import { galleryImages } from '../../data/galleryImages';
+import '../../styles/gallery.css';
 
 export default function Gallery() {
 
@@ -15,22 +16,20 @@ export default function Gallery() {
 
 	return (
 		<div>
-			<div className="gallery-wrapper">
-				<div className="gallery-container">
-					{
-						galleryImages.map((img, index) => (
-							<OptimizedImage
-								key={img.src}
-								className="gallery-image"
-								src={`${import.meta.env.BASE_URL}thumbnails/${img.src}`}
-								alt={img.alt}
-								fluid
-								onClick={() => handleShow(img)}
-								priority={index < 4}
-							/>
-						))
-					}
-				</div>
+			<div className="gallery-container">
+				{
+					galleryImages.map((img, index) => (
+						<OptimizedImage
+							key={img.src}
+							className="gallery-image"
+							src={`${import.meta.env.BASE_URL}thumbnails/${img.src}`}
+							alt={img.alt}
+							fluid
+							onClick={() => handleShow(img)}
+							priority={index < 4}
+						/>
+					))
+				}
 			</div>
 
 			<Modal show={show} fullscreen onHide={() => setShow(false)}>

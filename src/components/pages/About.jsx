@@ -1,6 +1,7 @@
 import { Image, Modal } from 'react-bootstrap';
 import { useState } from 'react';
 import OptimizedImage from '../OptimizedImage';
+import '../../styles/about.css';
 
 export default function About() {
 	const [show, setShow] = useState(false);

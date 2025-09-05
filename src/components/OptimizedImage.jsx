@@ -6,7 +6,6 @@ const OptimizedImage = ({
   alt,
   className = '',
   fluid = false,
-  thumbnail = false,
   priority = false,
   onClick,
   style = {}

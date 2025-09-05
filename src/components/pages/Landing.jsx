@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import OptimizedImage from "../OptimizedImage";
 import { landingImages } from "../../data/landingImages";
+import "../../styles/landing.css";
 
 export default function Landing() {
 	const [imageIndex, setImageIndex] = useState(0);
