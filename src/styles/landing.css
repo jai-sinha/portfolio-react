@@ -7,3 +7,21 @@
   color: white;
   text-decoration:none;
 }
+
+/* Responsive font sizes */
+@media (max-width: 1400px) {
+  .centered {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .centered {
+    font-size: 32px;
+  }
+}
+@media (max-width: 800px) {
+  .centered {
+    font-size: 20px;
+  }
+}

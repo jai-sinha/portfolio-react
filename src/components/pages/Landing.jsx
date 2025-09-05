@@ -18,7 +18,7 @@ export default function Landing() {
 	}, []);
 
 	return (
-		<>
+		<div style={{ position: 'relative' }}>
 			<OptimizedImage
 				style={{marginTop:"-10rem"}}
 				fluid
@@ -27,6 +27,6 @@ export default function Landing() {
 				priority={true}
 			/>
 			<Link className="centered" to="/gallery">Cars. Portraits. Motorsport.</Link>
-		</>
+		</div>
 	);
 }
