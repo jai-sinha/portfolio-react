@@ -22,4 +22,10 @@ export const galleryImages = [
 	{ src: "cayman-interior.jpeg", alt: "interior of cayman s... peep the carpet" },
 	{ src: "e36-rearquarter-legion.jpeg", alt: "e36 rear quarter view" },
 	{ src: "amg-shiny.jpeg", alt: "super shiny amg gt logo" },
+	{ src: "monaco-haas.jpeg", alt: "haas during free practice in monaco" },
+	{ src: "nice-port.jpeg", alt: "the old port in nice, fr" },
+	{ src: "clk-gtr.jpeg", alt: "mercedes clk gtr race car" },
+	{ src: "audi-engine-vert.jpeg", alt: "audi r10 fsi engine" },
+	{ src: "996-rsr.jpeg", alt: "996 rsr at laguna seca" },
+	{ src: "bmw-2002-vert.jpeg", alt: "bmw 2002 race car" },
 ];

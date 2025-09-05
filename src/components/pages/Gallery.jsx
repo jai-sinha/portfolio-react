@@ -1,4 +1,3 @@
-import { default as Masonry } from 'react-masonry-css';
 import { Modal } from 'react-bootstrap';
 import { useState } from 'react';
 import OptimizedImage from '../OptimizedImage';
@@ -16,29 +15,23 @@ export default function Gallery() {
 
 	return (
 		<div>
-			<Masonry
-				breakpointCols={{
-					default: 4,
-					2560: 3,
-					576: 2
-				}}
-				className="gallery-grid"
-				columnClassName="gallery-grid_column"
-			>
-				{
-					galleryImages.map((img, index) => (
-						<OptimizedImage
-							key={img.src}
-							className="gallery-image"
-							src={`${import.meta.env.BASE_URL}thumbnails/${img.src}`}
-							alt={img.alt}
-							fluid
-							onClick={() => handleShow(img)}
-							priority={index < 4} // Prioritize first 4 images
-						/>
-					))
-				}
-			</Masonry>
+			<div className="gallery-wrapper">
+				<div className="gallery-container">
+					{
+						galleryImages.map((img, index) => (
+							<OptimizedImage
+								key={img.src}
+								className="gallery-image"
+								src={`${import.meta.env.BASE_URL}thumbnails/${img.src}`}
+								alt={img.alt}
+								fluid
+								onClick={() => handleShow(img)}
+								priority={index < 4}
+							/>
+						))
+					}
+				</div>
+			</div>
 
 			<Modal show={show} fullscreen onHide={() => setShow(false)}>
 				<Modal.Header closeButton></Modal.Header>
