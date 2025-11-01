@@ -33,9 +33,9 @@ export default function Gallery() {
 			</div>
 
 			<Modal show={show} fullscreen onHide={() => setShow(false)}>
-				<Modal.Header closeButton></Modal.Header>
-				<Modal.Body onClick={() => setShow(false)} style={{ display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
-					<div onClick={(e) => e.stopPropagation()}>
+				<Modal.Header closeButton className='modal-header'></Modal.Header>
+				<Modal.Body onClick={() => setShow(false)} className="modal-body">
+					<div onClick={(e) => e.stopPropagation()} style={{ display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', height:'100%', width:'100%' }}>
 						<OptimizedImage
 							src={`${import.meta.env.BASE_URL}highRes/${selectedImage.src}`}
 							alt={selectedImage.alt}

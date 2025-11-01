@@ -1,3 +1,11 @@
+.modal-header {
+    background-color: #f5f5f5;
+}
+
+.modal-body {
+    background-color: #eaeaea;
+}
+
 .gallery-container {
     padding: 10px;
     margin: 0 auto;
