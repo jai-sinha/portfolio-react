@@ -45,7 +45,6 @@ export const galleryImages = [
 		width: 1280,
 		height: 865,
 	},
-	{ src: "singer-vert.jpeg", alt: "singer 911 in a lovely blue", width: 853, height: 1280 },
 	{
 		src: "rsspyder-frontquarter.jpeg",
 		alt: "favorite race car ever, porsche rs spyder",
@@ -81,7 +80,6 @@ export const galleryImages = [
 		height: 853,
 	},
 	{ src: "e36-rearquarter-legion.jpeg", alt: "e36 rear quarter view", width: 1280, height: 856 },
-	{ src: "amg-shiny.jpeg", alt: "super shiny amg gt logo", width: 1280, height: 853 },
 	{ src: "monaco-haas.jpeg", alt: "haas during fp1 in monaco", width: 1280, height: 848 },
 	{ src: "nice-port.jpeg", alt: "the old port in nice, france", width: 1280, height: 848 },
 	{ src: "clk-gtr.jpeg", alt: "mercedes clk gtr(?) maybe lm idk", width: 1280, height: 849 },
@@ -93,4 +91,18 @@ export const galleryImages = [
 	},
 	{ src: "996-rsr.jpeg", alt: "996 rsr at laguna seca", width: 1280, height: 853 },
 	{ src: "bmw-2002-vert.jpeg", alt: "bmw 2002 race car front quarter", width: 848, height: 1280 },
+	{ src: "963-rsp.jpeg", alt: "963 rsp, coolest modern porsche by far", width: 1280, height: 848 },
+	{
+		src: "ducati-woods-vert.jpeg",
+		alt: "ducati 900ss, same location as another pic here",
+		width: 853,
+		height: 1280,
+	},
+	{
+		src: "mercedes-pagoda-schloss.jpeg",
+		alt: "mercedes pagoda at schloss nymphenburg",
+		width: 1280,
+		height: 960,
+	},
+	{ src: "maserati-mc12-vert.jpeg", alt: "maserati mc12 on auction", width: 720, height: 1280 },
 ];
